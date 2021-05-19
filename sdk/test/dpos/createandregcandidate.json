@@ -1,0 +1,254 @@
+[
+    {
+        "comment": "set.founder create account dpos0001 & transfer 3000000 set",
+        "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+        "type": "createaccount",
+        "from": "set.founder",
+        "to": "set.account",
+        "gas": 30000000,
+        "value": 2000000000000000000000000,
+        "payload": {
+            "accountName": "dpos0001",
+            "founder": "dpos0001",
+            "publicKey": "0x04b9ac0a260e212b3b889009dfd1e827c1c096d609aa110e67a62a2f31b1e5bf3ff64c28648e8da60b1dc27e34e7b8cdeeda99c9524669bbd97b41d94990a19bb0",
+            "description": "dpos0001 account"
+        },
+        "succeed": true,
+        "childs": [{
+            "comment": "dpos0001 regcandidate & transfer 20000 set",
+            "type": "regcandidate",
+            "from": "dpos0001",
+            "to": "set.dpos",
+            "gas": 30000000,
+            "value": 20000000000000000000000,
+            "payload": {
+                "Info": "www.xxxxxx.com"
+            },
+            "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+            "succeed": true,
+            "childs": [{
+                "comment": "dpos0001 updatecandidate & transfer 5000 set",
+                "type": "updatecandidate",
+                "from": "dpos0001",
+                "to": "set.dpos",
+                "gas": 30000000,
+                "value": 5000000000000000000000,
+                "payload": {
+                    "Info": "www.dpos0001.com"
+                },
+                "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+                "succeed": true
+            }]
+        }]
+    },
+    {
+        "comment": "set.founder create account dpos0002 & transfer 3000000 set",
+        "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+        "type": "createaccount",
+        "from": "set.founder",
+        "to": "set.account",
+        "gas": 30000000,
+        "value": 2000000000000000000000000,
+        "payload": {
+            "accountName": "dpos0002",
+            "founder": "dpos0002",
+            "publicKey": "0x04b9ac0a260e212b3b889009dfd1e827c1c096d609aa110e67a62a2f31b1e5bf3ff64c28648e8da60b1dc27e34e7b8cdeeda99c9524669bbd97b41d94990a19bb0",
+            "description": "dpos0002 account"
+        },
+        "succeed": true,
+        "childs": [{
+            "comment": "dpos0002 regcandidate & transfer 20000 set",
+            "type": "regcandidate",
+            "from": "dpos0002",
+            "to": "set.dpos",
+            "gas": 30000000,
+            "value": 20000000000000000000000,
+            "payload": {
+                "Info": "www.xxxxx.com"
+            },
+            "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+            "succeed": true,
+            "childs": [{
+                "comment": "dpos0002 updatecandidate & transfer 5000 set",
+                "type": "updatecandidate",
+                "from": "dpos0002",
+                "to": "set.dpos",
+                "gas": 30000000,
+                "value": 5000000000000000000000,
+                "payload": {
+                    "Info": "www.dpos0002.com"
+                },
+                "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+                "succeed": true
+            }]
+        }]
+    },
+    {
+        "comment": "set.founder create account dpos0003 & transfer 3000000 set",
+        "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+        "type": "createaccount",
+        "from": "set.founder",
+        "to": "set.account",
+        "gas": 30000000,
+        "value": 2000000000000000000000000,
+        "payload": {
+            "accountName": "dpos0003",
+            "founder": "dpos0003",
+            "publicKey": "0x04b9ac0a260e212b3b889009dfd1e827c1c096d609aa110e67a62a2f31b1e5bf3ff64c28648e8da60b1dc27e34e7b8cdeeda99c9524669bbd97b41d94990a19bb0",
+            "description": "dpos0003 account"
+        },
+        "succeed": true,
+        "childs": [{
+            "comment": "dpos0003 regcandidate & transfer 20000 set",
+            "type": "regcandidate",
+            "from": "dpos0003",
+            "to": "set.dpos",
+            "gas": 30000000,
+            "value": 20000000000000000000000,
+            "payload": {
+                "Info": "www.xxxxxx.com"
+            },
+            "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+            "succeed": true,
+            "childs": [{
+                "comment": "dpos0003 updatecandidate & transfer 5000 set",
+                "type": "updatecandidate",
+                "from": "dpos0003",
+                "to": "set.dpos",
+                "gas": 30000000,
+                "value": 5000000000000000000000,
+                "payload": {
+                    "Info": "www.dpos0003.com"
+                },
+                "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+                "succeed": true
+            }]
+        }]
+    },
+    {
+        "comment": "set.founder create account dpos0004 & transfer 3000000 set",
+        "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+        "type": "createaccount",
+        "from": "set.founder",
+        "to": "set.account",
+        "gas": 30000000,
+        "value": 2000000000000000000000000,
+        "payload": {
+            "accountName": "dpos0004",
+            "founder": "dpos0004",
+            "publicKey": "0x04b9ac0a260e212b3b889009dfd1e827c1c096d609aa110e67a62a2f31b1e5bf3ff64c28648e8da60b1dc27e34e7b8cdeeda99c9524669bbd97b41d94990a19bb0",
+            "description": "dpos0004 account"
+        },
+        "succeed": true,
+        "childs": [{
+            "comment": "dpos0004 regcandidate & transfer 20000 set",
+            "type": "regcandidate",
+            "from": "dpos0004",
+            "to": "set.dpos",
+            "gas": 30000000,
+            "value": 20000000000000000000000,
+            "payload": {
+                "Info": "www.xxxxxx.com"
+            },
+            "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+            "succeed": true,
+            "childs": [{
+                "comment": "dpos0004 updatecandidate & transfer 5000 set",
+                "type": "updatecandidate",
+                "from": "dpos0004",
+                "to": "set.dpos",
+                "gas": 30000000,
+                "value": 5000000000000000000000,
+                "payload": {
+                    "Info": "www.dpos0004.com"
+                },
+                "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+                "succeed": true
+            }]
+        }]
+    },
+    {
+        "comment": "set.founder create account dpos0005 & transfer 3000000 set",
+        "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+        "type": "createaccount",
+        "from": "set.founder",
+        "to": "set.account",
+        "gas": 30000000,
+        "value": 2000000000000000000000000,
+        "payload": {
+            "accountName": "dpos0005",
+            "founder": "dpos0005",
+            "publicKey": "0x04b9ac0a260e212b3b889009dfd1e827c1c096d609aa110e67a62a2f31b1e5bf3ff64c28648e8da60b1dc27e34e7b8cdeeda99c9524669bbd97b41d94990a19bb0",
+            "description": "dpos0005 account"
+        },
+        "succeed": true,
+        "childs": [{
+            "comment": "dpos0005 regcandidate & transfer 20000 set",
+            "type": "regcandidate",
+            "from": "dpos0005",
+            "to": "set.dpos",
+            "gas": 30000000,
+            "value": 20000000000000000000000,
+            "payload": {
+                "Info": "www.xxxxxx.com"
+            },
+            "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+            "succeed": true,
+            "childs": [{
+                "comment": "dpos0005 updatecandidate & transfer 5000 set",
+                "type": "updatecandidate",
+                "from": "dpos0005",
+                "to": "set.dpos",
+                "gas": 30000000,
+                "value": 5000000000000000000000,
+                "payload": {
+                    "Info": "www.dpos0005.com"
+                },
+                "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+                "succeed": true
+            }]
+        }]
+    },
+    {
+        "comment": "set.founder create account dpos0006 & transfer 3000000 set",
+        "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+        "type": "createaccount",
+        "from": "set.founder",
+        "to": "set.account",
+        "gas": 30000000,
+        "value": 2000000000000000000000000,
+        "payload": {
+            "accountName": "dpos0006",
+            "founder": "dpos0006",
+            "publicKey": "0x04b9ac0a260e212b3b889009dfd1e827c1c096d609aa110e67a62a2f31b1e5bf3ff64c28648e8da60b1dc27e34e7b8cdeeda99c9524669bbd97b41d94990a19bb0",
+            "description": "dpos0006 account"
+        },
+        "succeed": true,
+        "childs": [{
+            "comment": "dpos0006 regcandidate & transfer 20000 set",
+            "type": "regcandidate",
+            "from": "dpos0006",
+            "to": "set.dpos",
+            "gas": 30000000,
+            "value": 20000000000000000000000,
+            "payload": {
+                "Info": "www.xxxxxx.com"
+            },
+            "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+            "succeed": true,
+            "childs": [{
+                "comment": "dpos0006 updatecandidate & transfer 5000 set",
+                "type": "updatecandidate",
+                "from": "dpos0006",
+                "to": "set.dpos",
+                "gas": 30000000,
+                "value": 5000000000000000000000,
+                "payload": {
+                    "Info": "www.dpos0006.com"
+                },
+                "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+                "succeed": true
+            }]
+        }]
+    }
+]

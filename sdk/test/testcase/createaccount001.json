@@ -1,0 +1,263 @@
+[{
+    "comment": "index0 set.founder create account ctest001 & transfer 100 set",
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "type": "createaccount",
+    "from": "set.founder",
+    "to": "set.account",
+    "gas": 30000000,
+    "value": 100000000000000000000,
+    "payload": {
+        "accountName": "ctest001",
+        "founder": "ctest001",
+        "publicKey": "0x04b9ac0a260e212b3b889009dfd1e827c1c096d609aa110e67a62a2f31b1e5bf3ff64c28648e8da60b1dc27e34e7b8cdeeda99c9524669bbd97b41d94990a19bb0",
+        "description": "ctest001 account"
+    },
+    "succeed": true
+},
+{
+    "comment": "index1 set.founder create account ctest001 & transfer 100 set,alreay exist",
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "type": "createaccount",
+    "from": "set.founder",
+    "to": "set.account",
+    "gas": 30000000,
+    "value": 100000000000000000000,
+    "payload": {
+        "accountName": "ctest001",
+        "founder": "ctest001",
+        "publicKey": "0x04b9ac0a260e212b3b889009dfd1e827c1c096d609aa110e67a62a2f31b1e5bf3ff64c28648e8da60b1dc27e34e7b8cdeeda99c9524669bbd97b41d94990a19bb0",
+        "description": "ctest001 account"
+    },
+    "succeed": false
+},
+{
+    "comment": "index2 set.founder create account 1ctest001, first char invalid",
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "type": "createaccount",
+    "from": "set.founder",
+    "to": "set.account",
+    "gas": 30000000,
+    "value": 100000000000000000000,
+    "payload": {
+        "accountName": "1ctest001",
+        "founder": "1ctest001",
+        "publicKey": "0x04b9ac0a260e212b3b889009dfd1e827c1c096d609aa110e67a62a2f31b1e5bf3ff64c28648e8da60b1dc27e34e7b8cdeeda99c9524669bbd97b41d94990a19bb0",
+        "description": "1ctest001 account"
+    },
+    "succeed": false
+},
+{
+    "comment": "index3 set.founder create account ctest, too short",
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "type": "createaccount",
+    "from": "set.founder",
+    "to": "set.account",
+    "gas": 30000000,
+    "value": 100000000000000000000,
+    "payload": {
+        "accountName": "ctest",
+        "founder": "ctest",
+        "publicKey": "0x04b9ac0a260e212b3b889009dfd1e827c1c096d609aa110e67a62a2f31b1e5bf3ff64c28648e8da60b1dc27e34e7b8cdeeda99c9524669bbd97b41d94990a19bb0",
+        "description": "ctest account"
+    },
+    "succeed": false
+},
+{
+    "comment": "index4 set.founder create account ctest001ctest001ctest001, too length",
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "type": "createaccount",
+    "from": "set.founder",
+    "to": "set.account",
+    "gas": 30000000,
+    "value": 100000000000000000000,
+    "payload": {
+        "accountName": "ctest001ctest001ctest001",
+        "founder": "ctest001ctest001ctest001",
+        "publicKey": "0x04b9ac0a260e212b3b889009dfd1e827c1c096d609aa110e67a62a2f31b1e5bf3ff64c28648e8da60b1dc27e34e7b8cdeeda99c9524669bbd97b41d94990a19bb0",
+        "description": "ctest001ctest001ctest001 account"
+    },
+    "succeed": false
+},
+{
+    "comment": "index5 set.founder create account ctest001c1, funder ctest001c2 not exist",
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "type": "createaccount",
+    "from": "set.founder",
+    "to": "set.account",
+    "gas": 30000000,
+    "value": 100000000000000000000,
+    "payload": {
+        "accountName": "ctest001c1",
+        "founder": "ctest001c2",
+        "publicKey": "0x04b9ac0a260e212b3b889009dfd1e827c1c096d609aa110e67a62a2f31b1e5bf3ff64c28648e8da60b1dc27e34e7b8cdeeda99c9524669bbd97b41d94990a19bb0",
+        "description": "ctest001c1 account"
+    },
+    "succeed": false
+},
+{
+    "comment": "index6 set.founder create account ctest001c1, no funder",
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "type": "createaccount",
+    "from": "set.founder",
+    "to": "set.account",
+    "gas": 30000000,
+    "value": 100000000000000000000,
+    "payload": {
+        "accountName": "ctest001c1",
+        "publicKey": "0x04b9ac0a260e212b3b889009dfd1e827c1c096d609aa110e67a62a2f31b1e5bf3ff64c28648e8da60b1dc27e34e7b8cdeeda99c9524669bbd97b41d94990a19bb0",
+        "description": "ctest001c1 account"
+    },
+    "succeed": true
+},
+{
+    "comment": "index7 set.founder create account ctest001c2, no publickey",
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "type": "createaccount",
+    "from": "set.founder",
+    "to": "set.account",
+    "gas": 30000000,
+    "value": 100000000000000000000,
+    "payload": {
+        "accountName": "ctest001c2",
+        "description": "ctest001c2 account"
+    },
+    "succeed": true
+},
+{
+    "comment": "index8 set.founder create account ctest001c3, over descript",
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "type": "createaccount",
+    "from": "set.founder",
+    "to": "set.account",
+    "gas": 30000000,
+    "value": 100000000000000000000,
+    "payload": {
+        "accountName": "ctest001c3",
+        "description": "ctest001c3 ctest001c3 ctest001c3 ctest001c3 ctest001c3 ctest001c3  ctest001c3 ctest001c3ctest001c3ctest001c3 ctest001c3 account ctest001c3 ctest001c3 ctest001c3 ctest001c3 ctest001c3 ctest001c3  ctest001c3 ctest001c3ctest001c3ctest001c3 ctest001c3 accountctest001c3 ctest001c3 ctest001c3 ctest001c3 ctest001c3 ctest001c3  ctest001c3 ctest001c3ctest001c3ctest001c3 ctest001c3 account ctest001c3 ctest001c3 ctest001c3 ctest001c3 ctest001c3 ctest001c3  ctest001c3 ctest001c3ctest001c3ctest001c3 ctest001c3 accountctest001c3 ctest001c3 ctest001c3 ctest001c3 ctest001c3 ctest001c3  ctest001c3 ctest001c3ctest001c3ctest001c3 ctest001c3 account ctest001c3 ctest001c3 ctest001c3 ctest001c3 ctest001c3 ctest001c3  ctest001c3 ctest001c3ctest001c3ctest001c3 ctest001c3 account"
+    },
+    "succeed": false
+},
+{
+    "comment": "index9 set.founder create account ctest001c3, no descript",
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "type": "createaccount",
+    "from": "set.founder",
+    "to": "set.account",
+    "gas": 30000000,
+    "value": 100000000000000000000,
+    "payload": {
+        "accountName": "ctest001c3"
+    },
+    "succeed": true
+},
+{
+    "comment": "index10 set.founder create account ctest001c4 & transfer 100 set, wrong asset id",
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "type": "createaccount",
+    "from": "set.founder",
+    "to": "set.account",
+    "gas": 30000000,
+    "id":1,
+    "value": 100000000000000000000,
+    "payload": {
+        "accountName": "ctest001c4",
+        "founder": "ctest001c4",
+        "publicKey": "0x04b9ac0a260e212b3b889009dfd1e827c1c096d609aa110e67a62a2f31b1e5bf3ff64c28648e8da60b1dc27e34e7b8cdeeda99c9524669bbd97b41d94990a19bb0",
+        "description": "ctest001c4 account"
+    },
+    "succeed": false
+},
+{
+    "comment": "index11 set.founder create account ctest001c4 & transfer 100 set, wrong to",
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "type": "createaccount",
+    "from": "set.founder",
+    "to": "ctest001",
+    "gas": 30000000,
+    "value": 100000000000000000000,
+    "payload": {
+        "accountName": "ctest001c4",
+        "founder": "ctest001c4",
+        "publicKey": "0x04b9ac0a260e212b3b889009dfd1e827c1c096d609aa110e67a62a2f31b1e5bf3ff64c28648e8da60b1dc27e34e7b8cdeeda99c9524669bbd97b41d94990a19bb0",
+        "description": "ctest001c4 account"
+    },
+    "succeed": false
+},
+{
+    "comment": "index12 set.founder create account, no payload",
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "type": "createaccount",
+    "from": "set.founder",
+    "to": "set.account",
+    "gas": 30000000,
+    "value": 100000000000000000000,
+    "payload": {
+    },
+    "succeed": false
+},
+{
+    "comment": "index13 set.founder create account ctest001c5 & tranfer 100 set",
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "type": "createaccount",
+    "from": "set.founder",
+    "to": "set.account",
+    "gas": 30000000,
+    "value": 100000000000000000000,
+    "payload": {
+        "accountName": "ctest001c5",
+        "founder": "ctest001c5",
+        "publicKey": "0x04b9ac0a260e212b3b889009dfd1e827c1c096d609aa110e67a62a2f31b1e5bf3ff64c28648e8da60b1dc27e34e7b8cdeeda99c9524669bbd97b41d94990a19bb0",
+        "description": "ctest001c5 account"
+    },
+    "succeed": true,
+    "childs": [{
+            "comment": "ctest001c5 create account ctest001c6 & tranfer 1 set",
+            "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+            "type": "createaccount",
+            "from": "ctest001c5",
+            "to": "set.account",
+            "gas": 30000000,
+            "value": 1000000000000000000,
+            "payload": {
+                "accountName": "ctest001c6",
+                "founder": "ctest001c6",
+                "publicKey": "0x04b9ac0a260e212b3b889009dfd1e827c1c096d609aa110e67a62a2f31b1e5bf3ff64c28648e8da60b1dc27e34e7b8cdeeda99c9524669bbd97b41d94990a19bb0",
+                "description": "ctest001c6 account"
+            },
+            "succeed": true
+        },
+        {
+            "comment": "ctest001c5 create account ctest001c7 & tranfer 1 set & founder ctest001c5",
+            "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+            "type": "createaccount",
+            "from": "ctest001c5",
+            "to": "set.account",
+            "gas": 30000000,
+            "value": 1000000000000000000,
+            "payload": {
+                "accountName": "ctest001c7",
+                "founder": "ctest001c5",
+                "publicKey": "0x04b9ac0a260e212b3b889009dfd1e827c1c096d609aa110e67a62a2f31b1e5bf3ff64c28648e8da60b1dc27e34e7b8cdeeda99c9524669bbd97b41d94990a19bb0",
+                "description": "ctest001c7 account"
+            },
+            "succeed": true
+        },
+        {
+            "comment": "ctest001c5 create account ctest001c8 & tranfer 100 set, not enough",
+            "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+            "type": "createaccount",
+            "from": "ctest001c5",
+            "to": "set.account",
+            "gas": 30000000,
+            "value": 100000000000000000000,
+            "payload": {
+                "accountName": "ctest001c8",
+                "founder": "ctest001c8",
+                "publicKey": "0x04b9ac0a260e212b3b889009dfd1e827c1c096d609aa110e67a62a2f31b1e5bf3ff64c28648e8da60b1dc27e34e7b8cdeeda99c9524669bbd97b41d94990a19bb0",
+                "description": "ctest001c8 account"
+            },
+            "succeed": false
+        }
+    ]
+}
+]

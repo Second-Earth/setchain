@@ -1,0 +1,94 @@
+[{
+    "comment": "set.founder create account candidate0005 & transfer 1000000 set",
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "type": "createaccount",
+    "from": "set.founder",
+    "to": "set.account",
+    "gas": 30000000,
+    "value": 1000000000000000000000000,
+    "payload": {
+        "accountName": "candidate0005",
+        "founder": "candidate0005",
+        "publicKey": "0x04b9ac0a260e212b3b889009dfd1e827c1c096d609aa110e67a62a2f31b1e5bf3ff64c28648e8da60b1dc27e34e7b8cdeeda99c9524669bbd97b41d94990a19bb0",
+        "description": "candidate0005 account"
+    },
+    "succeed": true
+},
+{
+    "comment": "candidate0005 refundcandidate, not exist",
+    "type": "refundcandidate",
+    "from": "candidate0005",
+    "to": "set.dpos",
+    "gas": 30000000,
+    "value": 0,
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "succeed": false,
+    "contain": "not exist"
+},
+{
+    "comment": "candidate0005 regcandidate & transfer 10000 set",
+    "type": "regcandidate",
+    "from": "candidate0005",
+    "to": "set.dpos",
+    "gas": 30000000,
+    "value": 10000000000000000000000,
+    "payload": {
+        "Info": "www.xxxxxx.com"
+    },
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "succeed": true
+}, {
+    "comment": "candidate0005 refundcandidate, wrong receipt",
+    "type": "refundcandidate",
+    "from": "candidate0005",
+    "to": "set.account",
+    "gas": 30000000,
+    "value": 0,
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "succeed": false,
+    "contain": "set.dpos"
+},
+{
+    "comment": "candidate0005 refundcandidate & transfer 10000 set, not zero",
+    "type": "unregcandidate",
+    "from": "candidate0005",
+    "to": "set.dpos",
+    "gas": 30000000,
+    "value": 10000000000000000000000,
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "succeed": false,
+    "contain": "is zero"
+},
+{
+    "comment": "candidate0005 refundcandidate, not unregcandidate",
+    "type": "refundcandidate",
+    "from": "candidate0005",
+    "to": "set.dpos",
+    "gas": 30000000,
+    "value": 0,
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "succeed": false,
+    "contain": "not in freeze"
+},
+{
+    "comment": "candidate0005 unregcandidate & transfer 0 set",
+    "type": "unregcandidate",
+    "from": "candidate0005",
+    "to": "set.dpos",
+    "gas": 30000000,
+    "value": 0,
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "succeed": true
+},
+{
+    "comment": "candidate0005 refundcandidate, freeze period",
+    "type": "refundcandidate",
+    "from": "candidate0005",
+    "to": "set.dpos",
+    "gas": 30000000,
+    "value": 0,
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "succeed": false,
+    "contain": "freeze period"
+}
+]

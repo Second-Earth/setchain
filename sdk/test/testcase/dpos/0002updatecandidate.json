@@ -1,0 +1,125 @@
+[{
+    "comment": "set.founder create account candidate0002 & transfer 1000000 set",
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "type": "createaccount",
+    "from": "set.founder",
+    "to": "set.account",
+    "gas": 30000000,
+    "value": 1000000000000000000000000,
+    "payload": {
+        "accountName": "candidate0002",
+        "founder": "candidate0002",
+        "publicKey": "0x04b9ac0a260e212b3b889009dfd1e827c1c096d609aa110e67a62a2f31b1e5bf3ff64c28648e8da60b1dc27e34e7b8cdeeda99c9524669bbd97b41d94990a19bb0",
+        "description": "candidate0002 account"
+    },
+    "succeed": true
+},
+{
+    "comment": "candidate0002 updatecandidate & transfer 0 set, not exist",
+    "type": "updatecandidate",
+    "from": "candidate0002",
+    "to": "set.dpos",
+    "gas": 30000000,
+    "value": 0,
+    "payload": {
+        "Info": "www.candidate0002.com"
+    },
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "succeed": false,
+    "contain": "not exist"
+},
+{
+    "comment": "candidate0002 regcandidate & transfer 10000 set",
+    "type": "regcandidate",
+    "from": "candidate0002",
+    "to": "set.dpos",
+    "gas": 30000000,
+    "value": 10000000000000000000000,
+    "payload": {
+        "Info": "www.xxxxxx.com"
+    },
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "succeed": true
+},
+
+{
+    "comment": "candidate0002 updatecandidate & transfer 0 set, wrong receipt",
+    "type": "updatecandidate",
+    "from": "candidate0002",
+    "to": "set.account",
+    "gas": 30000000,
+    "value": 0,
+    "payload": {
+        "Info": "www.candidate0002.com"
+    },
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "succeed": false,
+    "contain": "set.dpos"
+},
+{
+    "comment": "candidate0002 updatecandidate & transfer 0 set, wrong Info",
+    "type": "updatecandidate",
+    "from": "candidate0002",
+    "to": "set.dpos",
+    "gas": 30000000,
+    "value": 0,
+    "payload": {
+        "Info": "www.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.comwww.xxxxxx.com"
+    },
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "succeed": false,
+    "contain": "invalid Info"
+}, {
+    "comment": "candidate0002 updatecandidate & transfer 1001 set, non divisibility",
+    "type": "updatecandidate",
+    "from": "candidate0002",
+    "to": "set.dpos",
+    "gas": 30000000,
+    "value": 1001000000000000000000,
+    "payload": {
+        "Info": "www.candidate0002.com"
+    },
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "succeed": false,
+    "contain": "non divisibility"
+}, {
+    "comment": "candidate0002 updatecandidate & transfer 1100000 set, insufficient funds",
+    "type": "updatecandidate",
+    "from": "candidate0002",
+    "to": "set.dpos",
+    "gas": 30000000,
+    "value": 1100000000000000000000000,
+    "payload": {
+        "Info": "www.candidate0002.com"
+    },
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "succeed": false,
+    "contain": "insufficient funds"
+},
+{
+    "comment": "candidate0002 updatecandidate & transfer 0 set",
+    "type": "updatecandidate",
+    "from": "candidate0002",
+    "to": "set.dpos",
+    "gas": 30000000,
+    "value": 0,
+    "payload": {
+        "Info": "www.candidate0002.com"
+    },
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "succeed": true
+},
+{
+    "comment": "candidate0002 updatecandidate & transfer 1000 set",
+    "type": "updatecandidate",
+    "from": "candidate0002",
+    "to": "set.dpos",
+    "gas": 30000000,
+    "value": 1000000000000000000000,
+    "payload": {
+        "Info": "www.candidate0002.com"
+    },
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "succeed": true
+}
+]

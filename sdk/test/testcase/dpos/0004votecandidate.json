@@ -1,0 +1,149 @@
+[{
+    "comment": "set.founder create account candidate0004 & transfer 1000000 set",
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "type": "createaccount",
+    "from": "set.founder",
+    "to": "set.account",
+    "gas": 30000000,
+    "value": 1000000000000000000000000,
+    "payload": {
+        "accountName": "candidate0004",
+        "founder": "candidate0004",
+        "publicKey": "0x04b9ac0a260e212b3b889009dfd1e827c1c096d609aa110e67a62a2f31b1e5bf3ff64c28648e8da60b1dc27e34e7b8cdeeda99c9524669bbd97b41d94990a19bb0",
+        "description": "candidate0004 account"
+    },
+    "succeed": true
+},
+{
+    "comment": "set.founder votecandidate set.founder & transfer 1000 set, wrong receipt",
+    "type": "votecandidate",
+    "from": "set.founder",
+    "to": "set.account",
+    "gas": 30000000,
+    "value": 0,
+    "payload": {
+        "Candidate": "set.founder",
+        "Stake": 1000000000000000000000
+    },
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "succeed": false,
+    "contain": "set.dpos"
+},
+{
+    "comment": "set.founder votecandidate set.account & transfer 1000 set, not exist",
+    "type": "votecandidate",
+    "from": "set.founder",
+    "to": "set.dpos",
+    "gas": 30000000,
+    "value": 0,
+    "payload": {
+        "Candidate": "set.account",
+        "Stake": 1000000000000000000000
+    },
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "succeed": false,
+    "contain": "not exist"
+},
+{
+    "comment": "set.founder votecandidate set.founder & transfer 1000 set, value not zero",
+    "type": "votecandidate",
+    "from": "set.founder",
+    "to": "set.dpos",
+    "gas": 30000000,
+    "value": 1000000000000000000000,
+    "payload": {
+        "Candidate": "set.founder",
+        "Stake": 1000000000000000000000
+    },
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "succeed": false,
+    "contain": "is zero"
+},
+{
+    "comment": "set.founder votecandidate set.founder & transfer 1000 set, insufficient",
+    "type": "votecandidate",
+    "from": "set.founder",
+    "to": "set.dpos",
+    "gas": 30000000,
+    "value": 0,
+    "payload": {
+        "Candidate": "set.founder",
+        "Stake": 1000000000000000000000
+    },
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "succeed": false,
+    "contain": "insufficient"
+},
+{
+    "comment": "set.founder votecandidate set.founder & transfer 100000000000 set, non divisibility",
+    "type": "votecandidate",
+    "from": "set.founder",
+    "to": "set.dpos",
+    "gas": 30000000,
+    "value": 0,
+    "payload": {
+        "Candidate": "set.founder",
+        "Stake": 100000000000000000000000000000
+    },
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "succeed": false,
+    "contain": "invalid vote stake"
+},
+{
+    "comment": "set.founder votecandidate set.founder & transfer 1000 set, non divisibility",
+    "type": "votecandidate",
+    "from": "set.founder",
+    "to": "set.dpos",
+    "gas": 30000000,
+    "value": 0,
+    "payload": {
+        "Candidate": "set.founder",
+        "Stake": 1001000000000000000000
+    },
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "succeed": false,
+    "contain": "non divisibility"
+},
+{
+    "comment": "set.founder votecandidate set.founder & transfer 2000 set",
+    "type": "votecandidate",
+    "from": "set.founder",
+    "to": "set.dpos",
+    "gas": 30000000,
+    "value": 0,
+    "payload": {
+        "Candidate": "set.founder",
+        "Stake": 2000000000000000000000
+    },
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "succeed": true
+},
+{
+    "comment": "candidate0004 regcandidate & transfer 10000 set",
+    "type": "regcandidate",
+    "from": "candidate0004",
+    "to": "set.dpos",
+    "gas": 30000000,
+    "value": 10000000000000000000000,
+    "payload": {
+        "Info": "www.candidate0004.com"
+    },
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "succeed": true
+},
+{
+    "comment": "set.founder votecandidate candidate0004 & transfer 2000 set",
+    "type": "votecandidate",
+    "from": "set.founder",
+    "to": "set.dpos",
+    "gas": 30000000,
+    "value": 0,
+    "payload": {
+        "Candidate": "candidate0004",
+        "Stake": 2000000000000000000000
+    },
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "succeed": false,
+    "contain":"insufficient available quantity"
+}
+]
