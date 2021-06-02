@@ -1,7 +1,7 @@
 #!/bin/bash
 nodename="$1"
 datadir="/setdata"
-key="$3"
+key="$2"
 ostype=ubuntu
 
 usage()
@@ -10,7 +10,7 @@ usage()
 }
 
 if [ $# -ne 2 ]
-then 
+then
 {
 	usage
 	exit 80
@@ -31,7 +31,7 @@ cat /proc/version |grep -i $ostype
 if [ $? != 0 ]
 then
 {
-	echo "Not Support Ubuntu Operating System Yet, Please Change The Ubuntu For The Installation."
+	echo "Not Support $ostype Operating System Yet, Please Change The Ubuntu For The Installation."
 	exit 100
 }
 fi
@@ -40,16 +40,16 @@ echo "Installing SetNode......"
 mkdir $datadir
 
 if [ ! -f $key ]
-then 
+then
 {
 	echo "$key is no exist,please upload them."
 	exit 110
 }
 fi
- 
+
 cp -r ./$key $datadir/$key
 echo "copied the key to $datadir."
-sleep 5s 
+sleep 5s
 
 
 apt-get remove docker docker-engine docker.io containerd runc
@@ -66,7 +66,7 @@ echo \
 apt-get update
 apt-get install -y docker-ce docker-ce-cli containerd.io
 if [ $? -ne 0 ]
-then	
+then
 {
    echo "docker installation failed."
    exit 1
@@ -87,6 +87,7 @@ docker rm -f $nodename
 
 #docker run --name $nodename -itd --restart=always -v $datadir:$datadir -p 8080:8080 -p 2021:2021 setnode -g $datadir/genesis.json --p2p_staticnodes=$datadir/nodes.txt --p2p_listenaddr :8989 --p2p_name $1 --http_host 0.0.0.0 --http_port 8080 --datadir /setdata  --ipcpath /setdata/oex.ipc --contractlog --http_modules=fee,miner,dpos,account,txpool,set
 docker run --name $nodename -itd --restart=always -v $datadir:$datadir -p 2021:2021 setchain/setimages:setnode -g ../genesis.json --p2p_listenaddr :2021 --p2p_name $1 --p2p_staticnodes=../nodes.txt --http_host 0.0.0.0 --http_port 8080 --datadir $datadir  --ipcpath /setdata/set.ipc --contractlog --http_modules=fee,miner,dpos,account,txpool,set
+sleep 5s
 docker exec -i $nodename ./set miner -i $datadir/set.ipc setcoinbase  "$nodename" $datadir/$key
-sleep 10s
+sleep 5s
 docker exec -i $nodename ./set miner -i $datadir/set.ipc start
