@@ -31,6 +31,8 @@ import (
 var snapshotManagerName = "sysSnapshot"
 var snapshotTime = "time"
 
+var SnapshotInterval uint64 = 3600000
+
 // SnapshotManager snapshot manager object
 type SnapshotManager struct {
 	stateDB *state.StateDB
@@ -122,12 +124,25 @@ func (sn *SnapshotManager) GetPrevSnapshotTime(time uint64) (uint64, error) {
 	return blockInfo.Timestamp, nil
 }
 
+func (sn *SnapshotManager) search(time uint64) uint64 {
+	timestamp := time
+	for i := 0; i < 24*7; i++ {
+		key1 := snapshotTime + strconv.FormatUint(timestamp, 10)
+		blockInfoEnc, _ := sn.stateDB.Get(snapshotManagerName, key1)
+		if blockInfoEnc != nil {
+			return timestamp
+		}
+		timestamp -= SnapshotInterval
+	}
+	return time
+}
+
 func (sn *SnapshotManager) GetSnapshotMsg(account string, key string, time uint64) ([]byte, error) {
 	if time == 0 {
 		return nil, fmt.Errorf("Not snapshot info, time = %v", time)
 	}
 
-	key1 := snapshotTime + strconv.FormatUint(time, 10)
+	key1 := snapshotTime + strconv.FormatUint(sn.search(time), 10)
 	blockInfoEnc, err := sn.stateDB.Get(snapshotManagerName, key1)
 	if err != nil {
 		return nil, fmt.Errorf("Not snapshot info, error = %v", err)

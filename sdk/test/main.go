@@ -235,8 +235,8 @@ func runTx(api *sdk.API, tx *TTX, file string) error {
 }
 
 func main() {
-	_rpchost := flag.String("u", "http://127.0.0.1:8545", "RPC地址")
-	_dirfile := flag.String("d", "./testcase", "目录名/文件名")
+	_rpchost := flag.String("u", "http://127.0.0.1:8545", "RPC")
+	_dirfile := flag.String("d", "./testcase", "dir/filename")
 	flag.Parse()
 	api = sdk.NewAPI(*_rpchost)
 	Init()

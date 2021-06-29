@@ -1,0 +1,152 @@
+# Genesis json file
+genesis: "./build/genesis.json"
+
+debug: 
+  # Enable the pprof HTTP server
+  pprof: false
+  # Pprof HTTP server listening port
+  pprofport: 6060
+  # Pprof HTTP server listening interface
+  pprofaddr: "127.0.0.1"
+  # Turn on memory profiling with the given rate(512 * 1024)
+  memprofilerate: 524288
+  # Turn on block profiling with the given rate
+  blockprofilerate: 0 
+  # Write CPU profile to the given file
+  cpuprofile: ""
+  # Write execution trace to the given file
+  trace: ""
+# log configuration table
+log:
+  # Writes log records to file chunks at the given path
+  dir: ""
+  # Prepends log messages with call-site location (file and line number)
+  printorigins: false
+  # Logging verbosity: 0=silent, 1=error, 2=warn, 3=info, 4=debug, 5=detail
+  level: 3
+  # Per-module verbosity: comma-separated list of <pattern>=<level> (e.g. set/*=5,p2p=4)
+  vmodule: ""
+  # Request a stack trace at a specific logging statement (e.g. \"block.go:271\")
+  backtraceat: ""
+
+# node the set node configuration table
+node:
+  # the node datadir
+  datadir: "./build/testdatadir"
+  # RPC:ipc file name
+  ipcpath: "set.ipc"
+  # RPC:http host address
+  httphost: "localhost"
+  # RPC:http host port
+  httpport: 8545
+  # RPC:http api's offered over the HTTP-RPC interface
+  httpmodules: ["set"]
+  # RPC:Which to accept cross origin
+  httpcors: ["localhost"]
+  # RPC:http virtual hostnames from which to accept requests
+  httpvirtualhosts: ["*"]
+  # RPC:websocket host address
+  wshost: "localhost"
+  # RPC:websocket host port
+  wsport: 8546
+  # RPC:ws api's offered over the WS-RPC interface
+  wsmodules: ["set"]
+  # RPC:ws origins from which to accept websockets requests
+  wsorigins: []
+  # RPC:ws exposes all API modules via the WebSocket RPC interface rather than just the public ones.
+  wsexposall: false
+  # Node list file. BootstrapNodes are used to establish connectivity with the rest of the network
+  bootnodes: "./build/bootnodes.txt"
+  # Node list file. Static nodes are used as pre-configured connections which are always maintained and re-connected on disconnects
+  staticnodes: "./build/staticnodes.txt"
+  # Node list file. Trusted nodes are usesd as pre-configured connections which are always allowed to connect, even above the peer limit
+  trustnodes: "./build/trustnodes.txt"
+  # P2P configuration table
+  p2p:
+    # The ID of the p2p network. Nodes have different ID cannot communicate, even if they have same chainID and block data.
+    networkid: 1
+    # The name sets the p2p node name of this server
+    name: "set-P2P"
+    # Maximum number of network peers
+    maxpeers: 10
+    # Maximum number of pending connection attempts
+    maxpendpeers: 10
+    # DialRatio controls the ratio of inbound to dialed connections
+    dialratio: 10
+    # Disables the peer discovery mechanism (manual peer addition)
+    nodiscover: true
+    # The path to the database containing the previously seen live nodes in the network
+    nodedb: "./build/nodedb"
+    # Network listening address
+    listenaddr: ":8000"
+    # The server will not dial any peers.
+    nodial: false
+
+# setservice the set service configuration table
+ftservice:
+  # Megabytes of memory allocated to internal database caching
+  databasecache: 1024
+  # txpool configuration table
+  txpool:
+    # Disables price exemptions for locally submitted transactions
+    nolocals: false
+    # Disk journal for local transaction to survive node restarts
+    journal: "transactions.rlp"
+    # Time interval to regenerate the local transaction journal
+    rejournal: 1h
+    # Minimum gas price limit to enforce for acceptance into the pool
+    pricelimit: 2
+    # Price bump percentage to replace an already existing transaction
+    pricebump: 20
+    # Number of executable transaction slots guaranteed per account
+    accountslots: 256
+    # Maximum number of executable transaction slots for all accounts
+    globalslots: 1024
+    # Maximum number of non-executable transaction slots permitted per account
+    accountqueue: 1024
+    # Maximum number of non-executable transaction slots for all accounts
+    globalqueue: 2048
+    # Maximum amount of time non-executable transaction are queued
+    lifetime: 1h
+    # Maximum amount of time  executable transaction are resended
+    resendtime: 1h
+    # Minimum number of nodes for the transaction broadcast
+    minbroadcast: 3
+    # Ratio of nodes for the transaction broadcast
+    ratiobroadcast: 3
+  # gas price oracle
+  gpo:
+    # Number of recent blocks to check for gas prices
+    blocks: 30
+  miner:
+    # Start miner generate block and process transaction
+    start: false
+    # Name for block mining rewards
+    name: "set.founder"
+    # Hex of private key for block mining rewards
+    private: ["289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032"]
+    # Block extra data set by the miner
+    extra: "system"
+  metrics:
+    # flag that open statistical metrics
+    metrics: false
+    # flag that open influxdb thad store statistical metrics
+    influxdb: false
+    # URL that connect influxdb
+    influxdburl: "http://localhost:8086"
+    # Influxdb database name
+    influxdbname: "metrics"
+    # Indluxdb user name
+    influxdbuser: "test"
+    # Influxdb user passwd
+    influxdbpasswd: "test"
+    # Influxdb namespace
+    influxdbnamespace: "set/"
+  # flag for db to store contrat internal transaction log
+  contractlog: false
+  # flag for enable/disable state pruning.
+  statepruning: false
+  # blockchain refuse bad block hashes
+  badhashes: []
+  # start chain with a specified block number.
+  startnumber: 0
